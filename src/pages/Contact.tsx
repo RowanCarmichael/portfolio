@@ -37,22 +37,22 @@ const Link = styled.a<TContactLinksProps>`
 
 export const ContactLinks: React.FC<TContactLinksProps> = ({ size }) => (
   <FlexBox>
-    <Link size={size} href="http://www.github.com/RowanCarmichael" target="_blank">
+    <Link size={size} href="http://www.github.com/RowanCarmichael" rel="noopener noreferrer" target="_blank">
       <AnimateInView from={{ transform: 'scale(0)' }} delay={100}>
         <GitHubIcon fill="orangered" width={size} height={size} />
       </AnimateInView>
     </Link>
-    <Link size={size} href='mailto:carmichaelr@hotmail.co.uk' target="_top">
+    <Link size={size} href="mailto:carmichaelr@hotmail.co.uk" rel="noopener noreferrer" target="_top">
       <AnimateInView from={{ transform: 'scale(0)' }} delay={200}>
         <EmailIcon fill="orangered" width={size} height={size} />
       </AnimateInView>
     </Link>
-    <Link size={size} href="http://www.linkedin.com/in/rowan-carmichael/" target="_blank">
+    <Link size={size} href="http://www.linkedin.com/in/rowan-carmichael/" rel="noopener noreferrer" target="_blank">
       <AnimateInView from={{ transform: 'scale(0)' }} delay={300}>
         <LinkedInIcon fill="orangered" width={size} height={size} />
       </AnimateInView>
     </Link>
-    <Link size={size} href={Resume} download>
+    <Link size={size} href={Resume} rel="noopener noreferrer" download>
       <AnimateInView from={{ transform: 'scale(0)' }} delay={400}>
         <ResumeIcon fill="orangered" width={size} height={size} />
       </AnimateInView>
