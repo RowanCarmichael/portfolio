@@ -77,7 +77,7 @@ const App: React.FC = () => (
       <section id="EXPERIENCE">
         <Experience />
       </section>
-      <section id="CONTACT+LINKS">
+      <section id="CONTACT">
         <Contact />
       </section>
     </Navigation>

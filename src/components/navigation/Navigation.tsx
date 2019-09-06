@@ -48,6 +48,10 @@ const NavigationButton = styled.button<{ active: boolean }>`
     color: navajowhite;
     cursor: pointer;
   }
+
+  @media screen and (max-width: 400px) {
+    font-size: 0.8rem;
+  }
 `;
 
 const Navigation: React.FC<TNavigationProps> = ({ children }) => {

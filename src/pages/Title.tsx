@@ -52,6 +52,17 @@ const Container = styled.div`
     margin: 0;
     font-weight: 400;
   }
+
+  @media screen and (max-width: 400px) {
+    h1 {
+      font-size: 5rem;
+      line-height: 4.8rem;
+    }
+    h2 {
+      font-size: 3rem;
+      line-height: 2.6rem;
+    }
+  }
 `;
 
 const TitleHeader = styled.header`
