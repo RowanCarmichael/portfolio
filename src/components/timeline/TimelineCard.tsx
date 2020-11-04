@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TIconProps } from '../../assets/icons/types';
+import Icons from '../icons/Icons';
+import Tooltip from '../tooltip/Tooltip';
 
 type TTimelineCardProps = {
   title: string;
   subtitle: string;
   date: string;
-  children?: React.ReactNode;
+  tooltips?: {
+    label: string;
+    key?: string;
+  }[];
 };
 
 const Card = styled.div`
@@ -34,14 +40,37 @@ const TimelineHeader = styled.header`
   justify-content: space-between;
 `;
 
-const TimelineCard: React.FC<TTimelineCardProps> = ({ title, subtitle, date, children }) => (
+const FlexBox = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+`;
+
+const TooltipKey = styled.span`
+  cursor: default;
+`;
+
+const TimelineCard: React.FC<TTimelineCardProps> = ({ title, subtitle, date, tooltips = [] }) => (
   <Card>
     <TimelineHeader>
       <h4>{title}</h4>
       <span>{date}</span>
     </TimelineHeader>
     <h5>{subtitle}</h5>
-    {children}
+    <FlexBox>
+      {tooltips.map((tooltip) => {
+        const Icon = (Icons as { [key: string]: (props: TIconProps) => JSX.Element })[
+          `${tooltip.key || tooltip.label}Icon`
+        ];
+
+        return (
+          <Tooltip key={tooltip.label} label={tooltip.label}>
+            {Icon ? <Icon /> : <TooltipKey>{tooltip.key}</TooltipKey>}
+          </Tooltip>
+        );
+      })}
+    </FlexBox>
   </Card>
 );
 
