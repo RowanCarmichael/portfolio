@@ -251,17 +251,6 @@ const Experience: React.FC = () => (
           {
             label: 'Java',
           },
-          {
-            label: 'JavaScript',
-          },
-          {
-            label: 'HTML5',
-            key: 'Html',
-          },
-          {
-            label: 'CSS3',
-            key: 'Css',
-          },
         ]}
       />
     </Timeline>
